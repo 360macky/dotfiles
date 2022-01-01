@@ -1,0 +1,3 @@
+git config credential.username "360macky"
+git config user.name "Marcelo Arias"
+git config user.email "hola@marceloarias.com"
