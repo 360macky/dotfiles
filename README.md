@@ -12,3 +12,13 @@
 <p align="center">
   Just my personal .dotfiles
 </p>
+
+## Vim Configuration Guide
+Everytime you install a plugin in Vim, just add the plugin name inside the Bundle snippet.
+After that just open Vim and run
+```console
+:PluginInstall
+```
+
+## Oh my ZSH Configuration Guide
+TODO: To write...
