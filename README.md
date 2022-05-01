@@ -13,6 +13,10 @@
   Just my personal .dotfiles
 </p>
 
+## Package Managers
+* Vundle
+* Zplug
+
 ## Vim Configuration Guide
 Everytime you install a plugin in Vim, just add the plugin name inside the Bundle snippet.
 After that just open Vim and run
