@@ -14,8 +14,10 @@
 </p>
 
 ## Package Managers
-* Vundle
-* Zplug
+### Vundle
+
+### Zplug
+https://www.woefe.com/posts/bootstrap_zsh.html
 
 ## Vim Configuration Guide
 Everytime you install a plugin in Vim, just add the plugin name inside the Bundle snippet.
