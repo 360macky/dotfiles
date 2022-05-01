@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,6 +74,25 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Set up ZPlug (after installing ZPlug by Homebrew)
+
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "mafredri/zsh-async", from:github
+zplug "dracula/zsh", as:theme
+
+zplug load
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+ZSH_THEME="dracula"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -97,7 +116,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias dgh="cd ~/Documents/GitHub"
-alias zshconfig="nvim ~/.zshrc"
-alias vimconfig="nvim ~/.vimrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ghub="cd ~/Documents/GitHub"
+alias desk="cd ~/Desktop"
+alias zx="nvim ."
+alias zshrc="nvim ~/.zshrc"
+alias vimrc="nvim ~/.vimrc"
