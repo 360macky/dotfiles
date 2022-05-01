@@ -36,6 +36,13 @@ set termguicolors
 let g:auto_save = 1
 colorscheme nord
 
+" Enable mouse support
+set mouse=a
+
+" Search Settings
+set ignorecase
+set smartcase
+
 " Shortcuts
 nmap <C-b> :NERDTreeToggle<CR>
 nmap <C-q> :q<CR>
