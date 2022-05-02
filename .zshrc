@@ -1,3 +1,11 @@
+echo "\e[32m"
+echo " __    __  __                    _       "
+echo " \ \  |  \/  | __ _ _ __ ___ ___| | ___  "
+echo "  \ \ | |\/| |/ _\` | '__/ __/ _ \ |/ _ \ "
+echo "  / / | |  | | (_| | | | (_|  __/ | (_) |"
+echo " /_/  |_|  |_|\__,_|_|  \___\___|_|\___/ "
+echo "                                         "
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -115,9 +123,19 @@ ZSH_THEME="dracula"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# Go to folders
 alias ghub="cd ~/Documents/GitHub"
 alias desk="cd ~/Desktop"
+
+# Open websites
+alias twitter="open https://twitter.com/"
+alias platzi="open https://platzi.com/home"
+alias books="open https://learning.oreilly.com/home/"
+alias mail="open https://mail.google.com/mail/u/0/"
+
+# Fast edit with vim
 alias zx="nvim ."
+
+# Fast edition of configuration files.
 alias zshrc="nvim ~/.zshrc"
 alias vimrc="nvim ~/.vimrc"
