@@ -46,3 +46,6 @@ set smartcase
 " Shortcuts
 nmap <C-b> :NERDTreeToggle<CR>
 nmap <C-q> :q<CR>
+
+" Use Enter (<cr>) to select the first autocomplete suggestion
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
