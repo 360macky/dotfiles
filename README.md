@@ -15,6 +15,7 @@
 
 ## Package Managers
 ### Vundle
+https://www.reddit.com/r/neovim/comments/i65pwd/no_python3_provider_found_run_checkhealth_provider/
 
 ### Zplug
 https://www.woefe.com/posts/bootstrap_zsh.html
