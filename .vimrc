@@ -23,6 +23,17 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'yggdroot/indentline'
 Plugin '907th/vim-auto-save'
 
+" Prettier
+Plugin 'sbdchd/neoformat'
+
+" Snippets
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" React Snippets
+Plugin 'mlaursen/vim-react-snippets'
+
 call vundle#end()
 filetype plugin indent on
 
