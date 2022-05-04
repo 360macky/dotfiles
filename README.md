@@ -30,5 +30,8 @@ After that just open Vim and run
 :PluginInstall
 ```
 
+### YouCompleteMe Troubleshooting
+https://stackoverflow.com/questions/47667119/ycm-error-the-ycmd-server-shut-down-restart-wit-the-instructions-in-the-docu
+
 ## Oh my ZSH Configuration Guide
 TODO: To write...
