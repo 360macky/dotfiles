@@ -13,6 +13,8 @@
   Just my personal .dotfiles
 </p>
 
+## Versions
+NeoVim 0.7.0
 
 ## Package Managers
 ### Vundle (for Vim)
