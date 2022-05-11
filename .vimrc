@@ -22,6 +22,12 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'yggdroot/indentline'
 Plugin '907th/vim-auto-save'
+Plugin 'kyazdani42/nvim-web-devicons'
+
+" Telescope Search
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plugin 'nvim-telescope/telescope.nvim'
 
 " Prettier
 Plugin 'sbdchd/neoformat'
