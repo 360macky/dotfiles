@@ -13,8 +13,6 @@
   Just my personal .dotfiles
 </p>
 
-## Versions
-NeoVim 0.7.0
 
 ## Package Managers
 ### Vundle (for Vim)
@@ -27,11 +25,13 @@ https://www.woefe.com/posts/bootstrap_zsh.html
 https://stackoverflow.com/questions/31845710/how-do-i-save-and-version-brew-packages
 
 ## Vim Configuration
+I use Vim 0.7.0.
+
 ### Theme
 Currently I use Nord theme.
 
 ### Installing plugins
-Everytime you install a plugin in Vim, just add the plugin name inside the Bundle snippet.
+I use Vundle. Everytime you install a plugin in Vim, just add the plugin name inside the Bundle snippet.
 After that just open Vim and run
 ```console
 :PluginInstall
