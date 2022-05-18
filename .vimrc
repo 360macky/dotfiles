@@ -33,10 +33,11 @@ Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plugin 'nvim-telescope/telescope.nvim'
 
 " Prettier
+" Remember run $ npm install -g prettier
 Plugin 'sbdchd/neoformat'
 
 " Snippets
-Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'ycm-core/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
@@ -52,6 +53,10 @@ syntax on
 set number 
 set relativenumber
 set encoding=utf-8
+set wrap
+set linebreak
+set textwidth=0
+set wrapmargin=0
 set termguicolors
 let g:auto_save = 1
 colorscheme nord
@@ -63,9 +68,23 @@ set mouse=a
 set ignorecase
 set smartcase
 
+" Open NERDtree in the right side replacing the file
+set splitright
+
+" Show hidden files (starting with dot in NERDtree)
+let NERDTreeShowHidden=1
+
+" Tabs
+set tabstop=4
+set shiftwidth=2
+set expandtab
+
 " Shortcuts
 nmap <C-b> :NERDTreeToggle<CR>
 nmap <C-q> :q<CR>
+
+" Format using Ctrl+f
+nmap <C-f> :Neoformat<CR>
 
 " Leader Shortcuts
 let mapleader = ";"
@@ -77,5 +96,12 @@ inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 nnoremap Y "+y<CR>
 vnoremap Y "+y<CR>
 
+" Prettier configuration
+let g:neoformat_try_node_exe = 1
+
 " Set Vim not create swap files when editing
 set noswapfile
+
+" Enable quotation marks
+" Source: https://stackoverflow.com/questions/40601818/vim-displays-json-file-without-any-quotes
+let g:vim_json_conceal=0
