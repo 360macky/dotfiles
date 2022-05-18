@@ -24,6 +24,9 @@ Plugin 'yggdroot/indentline'
 Plugin '907th/vim-auto-save'
 Plugin 'kyazdani42/nvim-web-devicons'
 
+" Commenter
+Plugin 'preservim/nerdcommenter'
+
 " Telescope Search
 Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -63,6 +66,9 @@ set smartcase
 " Shortcuts
 nmap <C-b> :NERDTreeToggle<CR>
 nmap <C-q> :q<CR>
+
+" Leader Shortcuts
+let mapleader = ";"
 
 " Use Enter (<cr>) to select the first autocomplete suggestion
 inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
