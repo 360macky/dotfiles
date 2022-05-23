@@ -23,6 +23,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'yggdroot/indentline'
 Plugin '907th/vim-auto-save'
 Plugin 'kyazdani42/nvim-web-devicons'
+Plugin 'vim-syntastic/syntastic'
 
 " Commenter
 Plugin 'preservim/nerdcommenter'
@@ -37,12 +38,15 @@ Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'sbdchd/neoformat'
 
 " Snippets
-" Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " React Snippets
 Plugin 'mlaursen/vim-react-snippets'
+
+" HTML and React Components
+Plugin 'alvan/vim-closetag'
 
 call vundle#end()
 filetype plugin indent on
@@ -86,7 +90,7 @@ nmap <C-q> :q<CR>
 " Format using Ctrl+f
 nmap <C-f> :Neoformat<CR>
 
-" Leader Shortcuts
+" Leader Shortcut is ;
 let mapleader = ";"
 
 " Use Enter (<cr>) to select the first autocomplete suggestion
@@ -105,3 +109,16 @@ set noswapfile
 " Enable quotation marks
 " Source: https://stackoverflow.com/questions/40601818/vim-displays-json-file-without-any-quotes
 let g:vim_json_conceal=0
+
+" Shortcuts
+nmap <C-b> :NERDTreeToggle<CR>
+nmap <C-q> :q<CR>
+
+" Telescope Shortcuts
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Enclosing <tags> for HTML and React Components
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
