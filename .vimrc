@@ -41,6 +41,7 @@ Plugin 'sbdchd/neoformat'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'neoclide/coc-snippets'
 
 " React Snippets
 Plugin 'mlaursen/vim-react-snippets'
