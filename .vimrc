@@ -1,29 +1,42 @@
+" NeoVim Custom 360macky Configuration
+
 set rtp+=~/.vim/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
 " Autocomplete
-Plugin 'neoclide/coc.nvim', { 'branch' : 'release'} " Still learning how to use...
+Plugin 'neoclide/coc.nvim', { 'branch' : 'release'}
+" Remember use :CocInstall coc-snippets after installing Coc
 
-" NERDTree
+" NERDTree - Open directory
 Plugin 'preservim/nerdtree'
 
 " Theme
 Plugin 'arcticicestudio/nord-vim'
 
-" Other plugins
-Plugin 'jiangmiao/auto-pairs'
+" Git Integration
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
 
-" Git
+" Vim StatusBar
 Plugin 'vim-airline/vim-airline'
 
-" IDE
+" Start page
+Plugin 'mhinz/vim-startify'
+
+" Vim Calendar
+Plugin 'itchyny/calendar.vim'
+
+" IDE Plugins - General and pretty small plugins to understand
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'yggdroot/indentline'
 Plugin '907th/vim-auto-save'
 Plugin 'kyazdani42/nvim-web-devicons'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'farmergreg/vim-lastplace'
 
 " Commenter
 Plugin 'preservim/nerdcommenter'
@@ -41,13 +54,15 @@ Plugin 'sbdchd/neoformat'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'neoclide/coc-snippets'
 
 " React Snippets
 Plugin 'mlaursen/vim-react-snippets'
 
 " HTML and React Components
 Plugin 'alvan/vim-closetag'
+
+" Focus mode
+Plugin 'junegunn/goyo.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -63,8 +78,10 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 set termguicolors
-let g:auto_save = 1
 colorscheme nord
+
+" Set AutoSave using <ESC> key
+let g:auto_save = 1
 
 " Enable mouse support
 set mouse=a
@@ -91,7 +108,7 @@ nmap <C-q> :q<CR>
 " Format using Ctrl+f
 nmap <C-f> :Neoformat<CR>
 
-" Leader Shortcut is ;
+" Custom leader Key is ;
 let mapleader = ";"
 
 " Use Enter (<cr>) to select the first autocomplete suggestion
@@ -114,6 +131,8 @@ let g:vim_json_conceal=0
 " Shortcuts
 nmap <C-b> :NERDTreeToggle<CR>
 nmap <C-q> :q<CR>
+nmap <leader>zen :Goyo<CR>
+nmap <leader>cal :Calendar<CR>
 
 " Telescope Shortcuts
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -123,3 +142,33 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Enclosing <tags> for HTML and React Components
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
+
+" Syntastic Recommended Settings
+" Source: https://github.com/vim-syntastic/syntastic#3-recommended-settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Syntastic for JavaScript
+" Source: https://remarkablemark.org/blog/2016/09/28/vim-syntastic-eslint/#option-2
+let g:syntastic_javascript_checkers=['eslint']
+
+" Signify Symbols
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '-'
+let g:signify_sign_change            = '*'
+let g:signify_sign_delete_first_line = '‚Äæ'
+
+" Startify Header
+let g:startify_custom_header = [
+\ '    _    _      _ _         __  __                    _       _ ',
+\ '   | |  | |    | | |       |  \/  |                  | |     | |',
+\ '   | |__| | ___| | | ___   | \  / | __ _ _ __ ___ ___| | ___ | |',
+\ '   |  __  |/ _ \ | |/ _ \  | |\/| |/ _\`|  __/ __/ _ \ |/ _ \| |',
+\ '   | |  | |  __/ | | (_) | | |  | | (_| | | | (_|  __/ | (_) |_|',
+\ '   |_|  |_|\___|_|_|\___/  |_|  |_|\__,_|_|  \___\___|_|\___/(_)',
+\ ]
