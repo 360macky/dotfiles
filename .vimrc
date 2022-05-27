@@ -133,6 +133,8 @@ nmap <C-b> :NERDTreeToggle<CR>
 nmap <C-q> :q<CR>
 nmap <leader>zen :Goyo<CR>
 nmap <leader>cal :Calendar<CR>
+nmap <leader>clo :Calendar -view=clock<CR>
+nmap <leader>x :x<CR>
 
 " Telescope Shortcuts
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
