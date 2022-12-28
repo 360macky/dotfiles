@@ -13,6 +13,8 @@
   Just my personal .dotfiles
 </p>
 
+This repository includes configuration files for a variety of tools, including the terminal emulator, shell, text editor, and window manager. It also includes scripts for installing necessary dependencies and setting up the system.
+
 
 ## Package Managers
 ### Vundle (for Vim)
