@@ -2,7 +2,7 @@
   <img
     src=".github/github.png"
     align="center"
-    width="100"
+    width="140"
     alt=".dotfiles"
     title=".dotfiles"
   />
