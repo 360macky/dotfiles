@@ -12,14 +12,23 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'neoclide/coc.nvim', { 'branch' : 'release'}
 " Remember use :CocInstall coc-snippets after installing Coc
 
+" NeoVim Tree
+Plugin 'nvim-tree/nvim-tree.lua'
+
 " NERDTree - Directory Sidebar Tree
 Plugin 'preservim/nerdtree'
 
 " NERDTree - Git support for NERDTree
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-" Theme - Color Scheme of my editor
+" Theme - Dark Color Scheme of my editor
 Plugin 'arcticicestudio/nord-vim'
+
+" Theme - Light Color Scheme of my editor
+Plugin 'rmehri01/onenord.nvim', { 'branch': 'main' }
+
+" Theme - Light Color Scheme of my editor
+Plugin 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Git - Git Wrapper for Vim
 Plugin 'tpope/vim-fugitive'
@@ -34,7 +43,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'vim-airline/vim-airline'
 
 " Vim-Startify - Start page and Vim session management
-Plugin 'mhinz/vim-startify'
+Plugin 'mhinz/vim-startify', { 'branch': 'center' }
 
 " Vim Calendar
 Plugin 'itchyny/calendar.vim'
@@ -42,9 +51,11 @@ Plugin 'itchyny/calendar.vim'
 " IDE Plugins - General and pretty small plugins to understand
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'yggdroot/indentline'
-Plugin 'kyazdani42/nvim-web-devicons'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jiangmiao/auto-pairs'
+
+" DevIcons - Icons for NERDTree
+Plugin 'kyazdani42/nvim-web-devicons'
 
 Plugin 'farmergreg/vim-lastplace'
 
@@ -64,12 +75,18 @@ Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'sbdchd/neoformat'
 
 " Snippets
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
 
 " Vim-JavaScript - Provides syntax highlighting and improved indentation
 Plugin 'pangloss/vim-javascript'
+
+" GraphQL for Vim - Provides GraphQL file detection, syntax highlighting, and indentation.
+Plugin 'jparise/vim-graphql'
+
+" Astro for Vim - Provides syntax highlighting and improved indentation for Astro files.
+Plugin 'wuelnerdotexe/vim-astro'
 
 " React Snippets
 Plugin 'mlaursen/vim-react-snippets'
@@ -86,7 +103,7 @@ Plugin 'szw/vim-g'
 call vundle#end()
 filetype plugin indent on
 
-" Rememeber open NeoVim an run :PlugInstall after this
+" Remember open NeoVim an run :PlugInstall after this
 
 syntax on
 set number 
@@ -97,7 +114,11 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 set termguicolors
-colorscheme nord
+
+" Themes Set Up - TODO: I need an option to automatically change the theme
+" based on OS theme
+colorscheme onehalflight
+" colorscheme nord
 
 " COC
 " :CocInstall tsserver
@@ -115,22 +136,30 @@ set mouse=a
 set ignorecase
 set smartcase
 
-" Open NERDtree in the right side replacing the file
+" Open NERDtree in the right side replacing the file 
 set splitright
 
 " Show hidden files (starting with dot in NERDtree)
 let NERDTreeShowHidden=1
+
+" Astro Syntax Highlighting TypeScript
+let g:astro_typescript = 'enable'
 
 " Tab Configuration
 set tabstop=4
 set shiftwidth=2
 set expandtab
 
+" Switch between tab windows using Ctrl + Arrow Keys
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>
+
 " Custom leader Key is ;
 let mapleader = ";"
 
 " Use Enter (<cr>) to select the first autocomplete suggestion
-inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+" inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " Copy to clipboard using Y
 nnoremap Y "+y<CR>
@@ -154,7 +183,7 @@ nmap <leader>cal :Calendar<CR>
 nmap <leader>clo :Calendar -view=clock<CR>
 nmap <leader>x :x<CR>
 nmap <C-f> :Neoformat<CR>
-nmap <leader>g :G 
+nmap <leader>d :G 
 
 " Enable J and K keys.
 noremap J j
@@ -196,7 +225,7 @@ let g:startify_custom_header = [
 \ '   | |  | |    | | |       |  \/  |                  | |     | |',
 \ '   | |__| | ___| | | ___   | \  / | __ _ _ __ ___ ___| | ___ | |',
 \ '   |  __  |/ _ \ | |/ _ \  | |\/| |/ _\`|  __/ __/ _ \ |/ _ \| |',
-\ '   | |  | |  __/ | | (_) | | |  | | (_| | | | (_|  __/ | (_) |_|',
+\ '   | |  | |  __/ | | (_) | | |  | | (_| | | | (_|  __/ | (_)|_|',
 \ '   |_|  |_|\___|_|_|\___/  |_|  |_|\__,_|_|  \___\___|_|\___/(_)',
 \ ]
 
@@ -228,3 +257,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
+
+" TypeScript Config File (tsconfig.json) is actually jsonc, help TypeScript set the correct filetype
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+
+" This makes the time before it updates your hover faster, other
+set updatetime=300
