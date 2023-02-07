@@ -27,7 +27,17 @@ https://www.woefe.com/posts/bootstrap_zsh.html
 https://stackoverflow.com/questions/31845710/how-do-i-save-and-version-brew-packages
 
 ## Vim Configuration
-I use Vim 0.7.0.
+
+### Foundations
+
+`.vimrc` and `init.vim` are both configuration files for the Vim text editor, but they have a difference in location and purpose.
+
+- `.vimrc` is the traditional configuration file for Vim, and is usually stored in the user's home directory. It is used to configure Vim's settings, key bindings, plugins, etc. for a specific user on a specific system.
+- `init.vim`, on the other hand, is the configuration file for Vim when used with the Neovim text editor. `init.vim` is located in a directory called `config` inside the Neovim configuration directory.
+
+In summary, `.vimrc` is used for Vim configuration and `init.vim` is used for Neovim configuration.
+
+**I use Vim 0.7.0.**
 
 ### Theme
 
