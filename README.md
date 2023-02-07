@@ -30,7 +30,9 @@ https://stackoverflow.com/questions/31845710/how-do-i-save-and-version-brew-pack
 I use Vim 0.7.0.
 
 ### Theme
-Currently I use Nord theme.
+
+* **Nord** theme for dark mode
+* **One Half Light** theme for light mode
 
 ### Installing plugins
 I use Vundle. Everytime you install a plugin in Vim, just add the plugin name inside the Bundle snippet.
