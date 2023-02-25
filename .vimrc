@@ -27,6 +27,10 @@ Plugin 'arcticicestudio/nord-vim'
 " Theme - Light Color Scheme of my editor
 Plugin 'rmehri01/onenord.nvim', { 'branch': 'main' }
 
+" LPS
+Plugin 'neovim/nvim-lspconfig'
+Plugin 'kabouzeid/nvim-lspinstall'
+
 " Theme - Light Color Scheme of my editor
 Plugin 'sonph/onehalf', { 'rtp': 'vim' }
 
@@ -115,10 +119,14 @@ set textwidth=0
 set wrapmargin=0
 set termguicolors
 
-" Themes Set Up - TODO: I need an option to automatically change the theme
-" based on OS theme
-colorscheme onehalflight
-" colorscheme nord
+" Themes Set Up
+
+" If dark mode is enabled in the OS, use Nord, otherwise use OneHalf
+if system('defaults read -g AppleInterfaceStyle') == "Dark\n"
+  colorscheme nord
+else
+  colorscheme onehalflight
+endif
 
 " COC
 " :CocInstall tsserver
@@ -225,7 +233,7 @@ let g:startify_custom_header = [
 \ '   | |  | |    | | |       |  \/  |                  | |     | |',
 \ '   | |__| | ___| | | ___   | \  / | __ _ _ __ ___ ___| | ___ | |',
 \ '   |  __  |/ _ \ | |/ _ \  | |\/| |/ _\`|  __/ __/ _ \ |/ _ \| |',
-\ '   | |  | |  __/ | | (_) | | |  | | (_| | | | (_|  __/ | (_)|_|',
+\ '   | |  | |  __/ | | (_) | | |  | | (_| | | | (_|  __/ | (_) |_|',
 \ '   |_|  |_|\___|_|_|\___/  |_|  |_|\__,_|_|  \___\___|_|\___/(_)',
 \ ]
 
@@ -263,3 +271,4 @@ autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 " This makes the time before it updates your hover faster, other
 set updatetime=300
+
