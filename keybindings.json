@@ -36,6 +36,12 @@
   },
   {
     "key": "shift+alt+p",
-    "command": "git.push"
+    "command": "git.push",
+    "when": "!operationInProgress"
   },
+  {
+    "key": "shift+cmd+k",
+    "command": "-aipopup.action.modal.generate",
+    "when": "editorFocus"
+  }
 ]
